@@ -18,17 +18,17 @@ public class PersonController {
         return repository.findAll();
     }
 
-    @GetMapping(path = "/persons/1/{firstName}")
+    @GetMapping("/persons/1/{firstName}")
     public Optional<Person> get1(@PathVariable String firstName) {
         return repository.findByFirstName(firstName);
     }
 
-    @GetMapping(path = "/persons/2/{firstName}")
+    @GetMapping("/persons/2/{firstName}")
     public Optional<Person> get2(@PathVariable String firstName) {
         return repository.xptoByFirstName(firstName);
     }
 
-    @PostMapping(path = "/person")
+    @PostMapping("/person")
     public void post(@RequestBody Person person) {
         repository.save(person);
     }
